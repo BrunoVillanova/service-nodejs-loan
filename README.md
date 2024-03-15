@@ -9,39 +9,42 @@ A microservice for managing loan applications featuring submission, status check
 - PostgreSQL v16 database
 - Docker v25 containerization
 
-## Installation
+## Development Environment Setup
+
+### Node.js
+
+[Install asdf](https://asdf-vm.com/guide/getting-started.html) and the [Node.js plugin](https://asdf-vm.com/guide/getting-started.html#install-the-plugin).
+
+Then install Node.js version 18.18.2.
 
 ```bash
-$ npm install
+asdf install nodejs 18.18.2
 ```
+
+### Docker and Docker Compose
+
+[Install Docker](https://docs.docker.com/get-docker/) and the [Docker Compose plugin](https://docs.docker.com/compose/install/).
 
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+$ make build-dev
+$ make start
+```
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+For production deploy, push the image to our Docker private repo.
+```bash
+$ docker push devteam/service-nodejs-loan-nestjs
 ```
 
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ make build-test
+$ make start
 ```
 
 ## Stay in touch
 
-- Author - [Bruno Villanova](https://github.com/BrunoVillanova)
-- LinkedIn - [https://nestjs.com](https://www.linkedin.com/in/brunovillanova/)
+- Author: [Bruno Villanova](https://github.com/BrunoVillanova)
+- Professional Profile: [LinkedIn](https://www.linkedin.com/in/brunovillanova/)
